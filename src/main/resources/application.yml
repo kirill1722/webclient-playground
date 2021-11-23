@@ -1,0 +1,15 @@
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          myclient:
+            token-uri: "https://google.com/token"
+        registration:
+          myclient:
+            client-id: "myClientId"
+            client-secret: "myClientSecret"
+            authorization-grant-type: "client_credentials"
+            scope: openid
+  profiles:
+    active: local
