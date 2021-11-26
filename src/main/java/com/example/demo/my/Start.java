@@ -3,6 +3,7 @@ package com.example.demo.my;
 import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.Assert;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @Component
@@ -18,7 +19,8 @@ public class Start {
                 .retrieve()
                 .bodyToMono(String.class)
                 .block();
-        System.out.println("end");
+        System.out.println("end" + result);
+        Assert.isTrue(result.contains("google"));
     }
 
 }

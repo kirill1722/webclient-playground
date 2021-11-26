@@ -4,12 +4,14 @@ spring:
       client:
         provider:
           myclient:
-            token-uri: "https://google.com/token"
+            issuer-uri: "http://localhost:9000"
         registration:
           myclient:
-            client-id: "myClientId"
-            client-secret: "myClientSecret"
+            client-id: "demoClientId"
+            client-secret: "demoClientSecret"
             authorization-grant-type: "client_credentials"
             scope: openid
-  profiles:
-    active: local
+  sleuth:
+    web:
+      webclient:
+        enabled: true
